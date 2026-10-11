@@ -11,10 +11,12 @@ export type TrackPoint = {
 export type PinType = 'gate' | 'lock' | 'connection' | 'hotzone' | 'other';
 
 export const PIN_TYPES: Record<PinType, { label: string; emoji: string; color: string }> = {
-  gate: { label: 'Gate', emoji: '🚪', color: '#2563eb' },
-  lock: { label: 'Lock', emoji: '🔒', color: '#7c3aed' },
-  connection: { label: 'Connection', emoji: '🔌', color: '#059669' },
+  gate: { label: 'Entry', emoji: '🚪', color: '#2563eb' },
+  lock: { label: 'Locked', emoji: '🔒', color: '#7c3aed' },
+  connection: { label: 'Connection', emoji: '🔗', color: '#059669' },
   hotzone: { label: 'Hot zone', emoji: '🔥', color: '#dc2626' },
+  tight: { label: 'Crawl zone', emoji: '🐭', color: '#a638cf' },
+  darkness: { label: 'Dark zone', emoji: '🔦', color: '#0e1340' },
   other: { label: 'Other', emoji: '📍', color: '#6b7280' },
 };
 
