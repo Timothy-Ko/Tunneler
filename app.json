@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "TrenchMap",
+    "slug": "trenchmap",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.trenchmap.app",
+      "infoPlist": {
+        "UIBackgroundModes": ["location"],
+        "NSLocationWhenInUseUsageDescription": "TrenchMap shows your position on the map and records your path.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "TrenchMap keeps recording your path while the screen is locked or the app is in the background.",
+        "NSLocationAlwaysUsageDescription": "TrenchMap keeps recording your path while the screen is locked or the app is in the background."
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "isIosBackgroundLocationEnabled": true,
+          "locationAlwaysAndWhenInUsePermission": "TrenchMap keeps recording your path while the screen is locked or the app is in the background."
+        }
+      ]
+    ]
+  }
+}
