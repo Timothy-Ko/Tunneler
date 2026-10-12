@@ -15,7 +15,7 @@ import { formatDistance, formatDuration, pathDistance } from '../lib/geo';
 import { shareGpx } from '../lib/gpx';
 import { LatLng, MapLayer, PIN_TYPES, Pin, PinType, Project, TrackPoint } from '../types';
 
-const LAYER_KEY = 'trenchmap_layer_v1';
+const LAYER_KEY = 'Wend_layer_v1';
 const MAP_TYPES: Record<MapLayer, 'standard' | 'hybrid' | 'mutedStandard'> = {
   street: 'standard',
   satellite: 'hybrid',
@@ -100,10 +100,10 @@ export default function MapScreen({ userId, project, onBack }: Props) {
   }, [recording]);
 
   useEffect(() => {
-    if (keepAwake) activateKeepAwakeAsync('trenchmap');
-    else deactivateKeepAwake('trenchmap');
+    if (keepAwake) activateKeepAwakeAsync('Wend');
+    else deactivateKeepAwake('Wend');
     return () => {
-      deactivateKeepAwake('trenchmap');
+      deactivateKeepAwake('Wend');
     };
   }, [keepAwake]);
 
@@ -403,7 +403,7 @@ export default function MapScreen({ userId, project, onBack }: Props) {
             ))}
             <Pressable
               style={[styles.sheetBtn, { marginTop: 10, alignSelf: 'flex-start' }]}
-              onPress={() => Share.share({ message: `Join "${project.name}" in TrenchMap. Invite code: ${project.invite_code}` })}
+              onPress={() => Share.share({ message: `Join "${project.name}" in Wend. Invite code: ${project.invite_code}` })}
             >
               <Text style={styles.sheetBtnText}>Share invite code ({project.invite_code})</Text>
             </Pressable>
