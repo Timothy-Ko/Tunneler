@@ -31,7 +31,7 @@ export function buildGpx(projectName: string, tracks: Track[], pins: Pin[]): str
 
   return (
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<gpx version="1.1" creator="TrenchMap" xmlns="http://www.topografix.com/GPX/1/1">\n` +
+    `<gpx version="1.1" creator="Wend" xmlns="http://www.topografix.com/GPX/1/1">\n` +
     `  <metadata><name>${esc(projectName)}</name></metadata>\n` +
     `${wpts}\n${trks}\n</gpx>\n`
   );
@@ -39,7 +39,7 @@ export function buildGpx(projectName: string, tracks: Track[], pins: Pin[]): str
 
 export async function shareGpx(projectName: string, tracks: Track[], pins: Pin[]): Promise<void> {
   const xml = buildGpx(projectName, tracks, pins);
-  const safe = projectName.replace(/[^a-z0-9]+/gi, '_') || 'trenchmap';
+  const safe = projectName.replace(/[^a-z0-9]+/gi, '_') || 'Wend';
   const path = `${FileSystem.cacheDirectory}${safe}.gpx`;
   await FileSystem.writeAsStringAsync(path, xml, { encoding: FileSystem.EncodingType.UTF8 });
   if (await Sharing.isAvailableAsync()) {
