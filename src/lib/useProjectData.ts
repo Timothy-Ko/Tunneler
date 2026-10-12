@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from './supabase';
 import { Member, Pin, Track } from '../types';
 
-const key = (kind: string, projectId: string) => `trenchmap_${kind}_${projectId}`;
+const key = (kind: string, projectId: string) => `wend_${kind}_${projectId}`;
 
 async function readLocal<T>(kind: string, projectId: string): Promise<T[]> {
   try {
